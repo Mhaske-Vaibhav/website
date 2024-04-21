@@ -1,16 +1,20 @@
-import About from "../components/About";
-import { default as Header } from "../components/Header";
-// import { Shiba } from "../components/shiba";
+import { DogIcon } from "lucide-react";
+import ThemeSwitch from "./ThemeSwitcher";
 
-
-export default function MainPage() {
-    return <main className="grow overflow-hidden px-6">
-
-        <div className="w-full h-full max-w-[1072px] mx-auto flex flex-col ">
-            <Header></Header>
-            {/* <Shiba></Shiba> */}
-            <About></About>
-            {/* <MainSection></MainSection> */}
+export default function Header() {
+    return <header>
+        <div className="flex relative z-20 items-center justify-between h-16 before:block" >
+            <div className=" flex-grow flex justify-between md:justify-end space-x-4">
+                <div className="flex flex-col justify-center " >
+                    <a href="/" className="flex flex-row">
+                        <DogIcon className="mr-1"></DogIcon>
+                        <h1 className=" text-gray-800 dark:text-white font-sans font-bold"> Vaibhav Mhaske</h1>
+                    </a>
+                </div>
+                <div>
+                    <ThemeSwitch className="border dark:text-black  text-white rounded-lg p-2 dark:bg-orange-300 dark:hover:bg-orange-500 bg-purple-500 hover:bg-purple-600 w-10 h-10"></ThemeSwitch>
+                </div>
+            </div>
         </div>
-    </main>
+    </header >
 }
